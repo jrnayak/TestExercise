@@ -1,2 +1,10 @@
 .idea
 .DS_Store
+project
+*.iml
+*.ipr
+*.iws
+out
+tags
+.*.swp
+.*.swo

@@ -5,4 +5,5 @@ object Main extends App {
   println("Shopping Cart application")
 
   val fruits = List("apple", "apple", "orange", "orange")
+
 }

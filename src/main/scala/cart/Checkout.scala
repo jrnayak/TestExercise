@@ -13,4 +13,8 @@ class Checkout {
     case Orange => Some(OrangePrice)
     case _ => None
   }
+
+  def scan(products: Seq[String]): Double = {
+    products.map(scan).flatten.fold (ZeroPrice)(_+_)
+  }
 }

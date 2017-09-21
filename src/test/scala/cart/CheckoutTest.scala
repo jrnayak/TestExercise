@@ -17,4 +17,20 @@ class CheckoutTest extends FlatSpec with GivenWhenThen with Matchers with Option
   it should "not scan banana" in {
     checkout scan "banana" should be (empty)
   }
+  it should "return 60p as cost for an apple" in {
+    (checkout scan "apple").value should be (0.60)
+  }
+
+  it should "return 25p as cost for an orange" in {
+    (checkout scan "orange").value should be (0.25)
+  }
+  it should "return 1.45 GBP for three apples and one orange" in {
+
+    When("scanning three apples and one orange")
+
+    val scannedCost = checkout scan List("apple", "apple", "orange", "apple")
+
+    Then("should return a total cost of 1.45 GBP")
+    scannedCost should be (2.05)
+  }
 }
